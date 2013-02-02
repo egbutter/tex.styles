@@ -296,12 +296,13 @@ Carolina at Chapel Hill}
 % change made to fit 6 signature lines -MCW  5/5/03
 \def\unc@signatureline#1#2{\vspace{0.35in}\hbox to 3in{\hfil\shortstack{\vrule
       width 3in height 0.0pt\\{\unc@titlepagefont #1, #2}}}}
+\def\unc@siggyline#1#2{\makebox[1.375in]{\hrulefill} \hspace{0.1in} {\unc@titlepagefont #1, #2}\\}
 
 %% %% PKE 3/30/07: NOTE: SPRING, 2007 UNC WOULD NOT ACCEPT W/ SIGNATURE LINES. FOLLOWING
 %% %% CHANGES MADE TO ELIMINATE SIGNATURE LINES
 
 \def\unc@signatures{
-\begin{minipage}{2.5in}
+\begin{minipage}{3.5in}
     \begin{flushleft}
         {\unc@titlepagefont Approved by:}
     \end{flushleft} % Approved by should be centered  -MCW 5/20/03
@@ -328,20 +329,10 @@ Carolina at Chapel Hill}
 %       {\unc@signatureline{\unc@readerf}, {\unc@readertitle}}
 %    \@ifundefined{unc@readerg}{}
 %       {\unc@signatureline{\unc@readerg}, {\unc@readertitle}}
-%% use something like this if you do not want sig lines  PKE 3/30/07 ADDED
-{\unc@advisora}, {\unc@advisortitle}\\
-       \@ifundefined{unc@membera}{}
-{\unc@membera}, {\unc@membertitle}
-       \@ifundefined{unc@membera}{}
-{\unc@membera}, {\unc@membertitle}  \\
-% {\unc@signatureline{\unc@membera}{\unc@membertitle}}
-        \@ifundefined{unc@memberb}{}
-{\unc@memberb}, {\unc@membertitle}\\
-%      {\unc@signatureline{\unc@memberb}{\unc@membertitle}}
-          \@ifundefined{unc@memberc}{}
-{\unc@memberc}, {\unc@membertitle}\\
-          \@ifundefined{unc@memberd}{}
-{\unc@memberd}, {\unc@membertitle}
+% use something like this if you do not want sig lines  PKE 3/30/07 ADDED
+\unc@siggyline{\unc@advisora}{\unc@advisortitle}
+\unc@siggyline{\unc@membera}{\unc@membertitle}
+\unc@siggyline{\unc@memberb}{\unc@membertitle}
 %
 \end{minipage}
   }
